@@ -1,11 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 500
+@export var speed: int = 50
 
-func _physics_process(delta: float) -> void:
-	var input_vector := Vector2(
-		Input.get_action_strength('ui_right') - Input.get_action_strength('ui_left'),
-		Input.get_action_strength('ui_down') - Input.get_action_strength('ui_up')
-	)
-	var move_direction := input_vector.normalized()
-	move_and_slide(SPEED * move_direction)
+func _physics_process(_delta: float) -> void:
+	velocity = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down') * speed
+	move_and_slide()
+
