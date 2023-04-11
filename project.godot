@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="CardDungeon"
-run/main_scene="res://Scenes/Test.tscn"
+run/main_scene="res://Scenes/Levels/Test.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1600
+window/size/viewport_height=900
 window/stretch/scale=5.0
 
 [input]
