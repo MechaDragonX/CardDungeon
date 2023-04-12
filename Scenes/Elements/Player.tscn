@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://57wmvqx3pj5s"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_8giga"]
-[ext_resource type="Texture2D" uid="uid://do3rtlaueqgna" path="res://Assets/player_sheet.png" id="2_qbi0n"]
+[ext_resource type="Texture2D" uid="uid://23xucu1ldh60" path="res://Assets/player.png" id="2_4ip1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ri2v7"]
-size = Vector2(13, 20)
+size = Vector2(9, 17)
 
 [sub_resource type="Animation" id="Animation_0c8mk"]
 resource_name = "WalkDown"
@@ -20,14 +20,14 @@ script = ExtResource("1_8giga")
 speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -3)
+position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_ri2v7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qbi0n")
-hframes = 6
-vframes = 7
-frame = 1
+texture = ExtResource("2_4ip1c")
+hframes = 9
+vframes = 6
+frame = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
