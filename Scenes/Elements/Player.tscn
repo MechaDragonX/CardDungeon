@@ -1,10 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://2nnvhwgakb7b"]
+[gd_scene load_steps=13 format=3 uid="uid://2nnvhwgakb7b"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xamtm"]
 [ext_resource type="Texture2D" uid="uid://23xucu1ldh60" path="res://Assets/player.png" id="2_4ip1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ri2v7"]
 size = Vector2(16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ixru"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1lvr"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahjm3"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns4m4"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5paa"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb80t"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alago"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(0, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2b47"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(48, 72, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1mmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ixru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1lvr")
+}],
+"loop": true,
+"name": &"WalkDown",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahjm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns4m4")
+}],
+"loop": true,
+"name": &"WalkLeft",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5paa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb80t")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alago")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2b47")
+}],
+"loop": true,
+"name": &"WalkUp",
+"speed": 10.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(6, 6)
@@ -14,9 +93,9 @@ script = ExtResource("1_xamtm")
 position = Vector2(2, 3.5)
 shape = SubResource("RectangleShape2D_ri2v7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 1)
-texture = ExtResource("2_4ip1c")
-hframes = 3
-vframes = 4
-frame = 1
+sprite_frames = SubResource("SpriteFrames_j1mmp")
+animation = &"WalkDown"
+autoplay = "WalkDown"
+frame_progress = 0.220822
