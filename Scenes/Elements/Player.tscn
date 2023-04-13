@@ -1,10 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://2nnvhwgakb7b"]
+[gd_scene load_steps=17 format=3 uid="uid://2nnvhwgakb7b"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xamtm"]
 [ext_resource type="Texture2D" uid="uid://23xucu1ldh60" path="res://Assets/player.png" id="2_4ip1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ri2v7"]
 size = Vector2(16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sj2w"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1va5"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83p5e"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ms53"]
+atlas = ExtResource("2_4ip1c")
+region = Rect2(24, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ixru"]
 atlas = ExtResource("2_4ip1c")
@@ -40,6 +56,38 @@ region = Rect2(48, 72, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j1mmp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sj2w")
+}],
+"loop": true,
+"name": &"StopDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1va5")
+}],
+"loop": true,
+"name": &"StopLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83p5e")
+}],
+"loop": true,
+"name": &"StopRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ms53")
+}],
+"loop": true,
+"name": &"StopUp",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ixru")
@@ -96,6 +144,5 @@ shape = SubResource("RectangleShape2D_ri2v7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 1)
 sprite_frames = SubResource("SpriteFrames_j1mmp")
-animation = &"WalkDown"
-autoplay = "WalkDown"
-frame_progress = 0.220822
+animation = &"StopUp"
+autoplay = "StopDown"
