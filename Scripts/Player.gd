@@ -18,7 +18,12 @@ func _physics_process(_delta: float):
 func _get_input_direction():
 	var x = -int(Input.is_action_pressed('ui_left')) + int(Input.is_action_pressed('ui_right'))
 	var y = -int(Input.is_action_pressed('ui_up')) + int(Input.is_action_pressed('ui_down'))
-	input_direction = Vector2(x, y).normalized()
+	
+	if (x != 0) && (y != 0):
+		input_direction = Vector2.ZERO
+	else:
+		input_direction = Vector2(x, y)
+	
 	return input_direction
 
 
